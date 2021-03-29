@@ -1,6 +1,6 @@
 export default (sequelize, DataTypes) => {
   const DietaryRestrictions = sequelize.define(
-    "Dietary_Restrictions",
+    'Dietary_Restrictions',
     {
       restriction_id: {
         type: DataTypes.INTEGER,
