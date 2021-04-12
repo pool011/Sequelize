@@ -12,13 +12,6 @@ async function getDiningHallData() {
   return allDiningHalls;
 }
 
-// function removeFavorite(items) {
-//   const favorites = getFavorites();
-//   const {diningFavorites} = favorites;
-//   console.log('items.id', typeof parseInt(items.id,10), 'diningFavorites', typeof diningFavorites[1]);
-//   return parseInt(items.id,10) !== diningFavorites;
-// }
-
 async function populateDiningHalls(halls) {
   function setFavorites(favorites) {
     let result;
@@ -43,10 +36,8 @@ async function populateDiningHalls(halls) {
     iconImg.classList.add('fa-star');
 
     if (isFavorite) {
-      // favoriteIconRow.innerHTML = '<button class="button favorite" type="button"><span class="icon"><i class="fas fa-star" aria-hidden="false"></i></span></button>';
       iconImg.classList.add('fas');
     } else {
-      // favoriteIconRow.innerHTML = '<button class="button favorite" type="button"><span class="icon"><i class="far fa-star" aria-hidden="false"></i></span></button>';
       iconImg.classList.add('far');
     }
  
@@ -55,9 +46,7 @@ async function populateDiningHalls(halls) {
     icon.appendChild(iconImg);
     favoriteButton.appendChild(icon);
     favoriteButtonDatum.appendChild(favoriteButton);
-    // const favoriteIcon = favoriteIconElement.querySelector('i');
-    // favoriteIcon.id = id;
-    // console.log('showFavorite:', favoriteIcon.id, favoriteIcon.classList.contains('fas'));
+
     return favoriteButtonDatum;
   }
 
@@ -85,9 +74,6 @@ async function populateDiningHalls(halls) {
       const allDiningHalls = await getDiningHallData();
       console.log('Button event fired.');
       const icon = event.target.querySelector('.fa-star') === null ? event.target : event.target.querySelector('.fa-star');
-      // icon.classList.toggle('fas');
-      // icon.classList.toggle('far');
-      // console.log('items.id', typeof parseInt(icon.id, 10), 'diningFavorites', typeof diningFavorites[1]);
       if (diningFavorites.includes(parseInt(icon.id, 10))) {
         console.log('Remove favorite');
         const newFavorites = diningFavorites.filter((item) => item !== parseInt(icon.id, 10));
