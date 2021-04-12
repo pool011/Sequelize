@@ -1,7 +1,8 @@
 // import {mdiStar, mdiStarOutline, mdiStarPlusOutline} from '@mdi/js';
 function getFavorites() {
-  const favorites = localStorage.getItem('diningFavorites') === null ? ['empty'] : localStorage.getItem('diningFavorites');
-  return JSON.parse(`{"diningFavorites": ${favorites}}`);
+  const favorites = localStorage.getItem('diningFavorites') === null ? JSON.stringify(['empty']) : localStorage.getItem('diningFavorites');
+  console.log(favorites);
+  return JSON.parse(favorites);
 }
 
 async function getDiningHallData() {
@@ -52,8 +53,8 @@ async function populateDiningHalls(halls) {
 
   console.log(halls);
   const favorites = getFavorites();
-  const {diningFavorites} = favorites;
-  console.log('favorites', favorites);
+  const diningFavorites = favorites;
+  console.log('favorites', diningFavorites);
   const tableBody = document.querySelector('#hall-list tbody');
   tableBody.innerHTML = '';
   halls.data.forEach((hall) => {
@@ -95,7 +96,7 @@ async function windowActions() {
   const allDiningHalls = await getDiningHallData();
   const favorites = getFavorites();
 
-  const {diningFavorites} = favorites;
+  const diningFavorites = favorites;
   const favoritesArr = (diningFavorites === null) ? ['empty'] : diningFavorites;
 
   await populateDiningHalls(allDiningHalls, favoritesArr);
