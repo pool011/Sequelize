@@ -1,6 +1,6 @@
 // import {mdiStar, mdiStarOutline, mdiStarPlusOutline} from '@mdi/js';
 function getFavorites() {
-  const favorites = localStorage.getItem('diningFavorites') === null ? JSON.stringify([]) : localStorage.getItem('diningFavorites');
+  const favorites = localStorage.getItem('diningFavorites') === null ? '[]' : localStorage.getItem('diningFavorites');
   return JSON.parse(favorites);
 }
 
@@ -16,7 +16,7 @@ async function populateDiningHalls(halls) {
   function setFavorites(favorites) {
     let result;
     if (favorites === null) {
-      result = ['empty'];
+      result = [];
     } else {
       result = favorites;
     } 
