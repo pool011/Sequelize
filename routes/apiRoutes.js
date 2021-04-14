@@ -216,7 +216,20 @@ router.get("/restrictions/:restriction_id", async (req, res) => {
 /// /////////////////////////////////
 /// //////Custom SQL Endpoint////////
 /// /////////////////////////////////
-router.get("/custom", async (req, res) => {
+// router.get("/stackedChart", async (req, res) => {
+//   try {
+//     const visData = new Promise((resolve) => );
+//   } catch (err) {
+//     console.error(err);
+//     res.send('Server error');
+//   }
+// });
+
+
+/// /////////////////////////////////
+/// //////Custom SQL Endpoint////////
+/// /////////////////////////////////
+router.post("/custom", async (req, res) => {
   try {
     const result = await db.sequelizeDB.query(req.body.query, {
       type: sequelize.QueryTypes.SELECT,

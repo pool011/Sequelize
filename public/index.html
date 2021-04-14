@@ -9,34 +9,39 @@
     <script src="https://kit.fontawesome.com/2bfb7f6d1d.js" crossorigin="anonymous"></script>
   </head>
   <body>
+    <div class="hero is-primary">
+      <section class="hero-body">
+        <h1 class="title is-2">Jonah Pool's Lab 6</h1>
+      </section>
+    </div>
     <div class="columns">
       <!--div class="column is-one-quarter"></div-->
       <div class="column is-three-fifths is-offset-one-fifth">
-        <div class="box">
-          <section class="section">
-            <h1 class="title is-2">Jonah Pool's Lab 6</h1>
-          </section>
+        <!--div class="box"-->
+        <div class="content is-primary has-text-centered">
+          <h2 class="title is-2">Macro Chart</h2>
+          <div id="chartContainer" style="height: 370px; width: 100%;"></div>
         </div>
-        <div class="box">
-          <div class="block">
-            <h2 class="title">Dining Hall Directory</h2>
-            <table class="table is-primary is-bordered is-fullwidth" name="hall-list" id="hall-list">
-              <thead>
-                <tr>
-                  <th>Favorites</th>
-                  <th>Hall ID</th>
-                  <th>Hall Name</th>
-                  <th>Hall Location</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
+        <!--/div class="is-divider"></div-->
+        <div class="block">
+          <h2 class="title is-3">Dining Hall Directory</h2>
+          <table class="table is-primary is-bordered is-fullwidth" name="hall-list" id="hall-list">
+            <thead>
+              <tr>
+                <th>Favorites</th>
+                <th>Hall ID</th>
+                <th>Hall Name</th>
+                <th>Hall Location</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
         </div>
       </div>
       <!--div class="column is-one-quarter"></div-->
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js" integrity="sha512-FJ2OYvUIXUqCcPf1stu+oTBlhn54W0UisZB/TNrZaVMHHhYvLBV9jMbvJYtvDe5x/WVaoXZ6KB+Uqe5hT2vlyA==" crossorigin="anonymous"></script>
     <script src="script.js"></script>
   </body>
   <footer class="footer">
